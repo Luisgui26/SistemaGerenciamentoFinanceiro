@@ -1,0 +1,35 @@
+{
+  "name": "@financas/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/scripts/migrate.ts",
+    "db:check": "tsx src/scripts/check-db.ts",
+    "user:add": "tsx src/scripts/add-user.ts",
+    "user:password": "tsx src/scripts/reset-user-password.ts",
+    "test": "tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.9.0",
+    "better-auth": "1.7.14",
+    "@better-auth/drizzle-adapter": "1.7.14",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "drizzle-orm": "0.45.4",
+    "express": "5.3.0",
+    "pg": "^8.16.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.0",
+    "@types/pg": "^8.15.0",
+    "drizzle-kit": "0.31.11",
+    "tsx": "^4.20.0"
+  }
+}
